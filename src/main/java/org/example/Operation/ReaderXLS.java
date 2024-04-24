@@ -3,7 +3,6 @@ package org.example.Operation;
 import java.io.*;
 
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
@@ -38,6 +37,7 @@ public class ReaderXLS {
         int numRows = sheet.getPhysicalNumberOfRows();
         int numCols = 0;
         for (int i = 0; i < numRows; i++) {
+            //getlastcellnum возвращает индекс последней заполненной ячейки в строке
             numCols = Math.max(numCols, sheet.getRow(i).getLastCellNum());
         }
         double[][] data = new double[numCols][numRows];
@@ -62,8 +62,10 @@ public void writeXLSX(double[][] mas) throws IOException{
     Sheet mainSheet = workbook.createSheet("Полученные значения");
     Sheet covarianceSheet = workbook.createSheet("Матрица ковариации");
 
-    String[] statNames = {"Среднее геометрическое", "Среднее арифметическое", "Оценка стандартного отклонения", "Размах", "Коэффициент ковариации с последующей выборкой", "Количество элементов",
-            "Нижняя граница доверительного интервала", "Верхняя граница доверительного интервала", "Оценка дисперсии", "Максимум", "Минимум"};
+    String[] statNames = {"Среднее геометрическое", "Среднее арифметическое", "Оценка стандартного отклонения", "Размах",
+            "Коэффициент ковариации с последующей выборкой", "Количество элементов",
+            "Нижняя граница доверительного интервала", "Верхняя граница доверительного интервала", "Оценка дисперсии",
+            "Максимум", "Минимум"};
 
     for (int i = 0; i < statNames.length; i++) {
         Row row = mainSheet.createRow(i);
@@ -75,21 +77,23 @@ public void writeXLSX(double[][] mas) throws IOException{
             valueCell.setCellValue((Repository.getInstance().getParameters())[i][j]);
         }
     }
-
-    for (int i = 0; i < mas.length; i++) {
-        Row headerRow = covarianceSheet.createRow(0);
-        headerRow.createCell(i + 1).setCellValue("Выборка " + (i + 1));
-
-        for (int j = 0; j < mas.length; j++) {
-            if (i == 0) {
-                Row sampleRow = covarianceSheet.createRow(j + 1);
-                sampleRow.createCell(0).setCellValue("Выборка " + (j + 1));
-            }
-            covarianceSheet.getRow(j + 1).createCell(i + 1).setCellValue(Repository.getInstance().getCov(i, j));
+    Row row = covarianceSheet.createRow(0);
+    for (int j = 0; j < Repository.getInstance().getMatrix().length; j++) {
+        Cell name = row.createCell(j + 1);
+        name.setCellValue("Выборка " + (j + 1));
+    }
+    for (int j = 1; j <= Repository.getInstance().getMatrix().length; j++) {
+        row = covarianceSheet.createRow(j);
+        Cell name = row.createCell(0);
+        name.setCellValue("Выборка " + j);
+        for (int i = 1; i <= Repository.getInstance().getMatrix().length; i++) {
+            name = row.createCell(i);
+            name.setCellValue(Repository.getInstance().getCov(i - 1, j - 1));
         }
+        covarianceSheet.autoSizeColumn(j - 1);
     }
 
-    try (FileOutputStream fileOut = new FileOutputStream("test.xlsx")) {
+    try (FileOutputStream fileOut = new FileOutputStream("C:\\Users\\kiril\\IdeaProjects\\StatJava\\test.xlsx")) {
         workbook.write(fileOut);
         System.out.println("Параметры успешно экспортированы");
     } catch (IOException e) {
@@ -99,42 +103,4 @@ public void writeXLSX(double[][] mas) throws IOException{
     }
 }
 }
-
-
-//        Workbook workbook = new XSSFWorkbook();
-//        Sheet mainSheet = workbook.createSheet("Полученные значения");
-//        Sheet covarianceSheet = workbook.createSheet("Матрица ковариации");
-//
-//        String[] statNames = {"Среднее геометрическое", "Среднее арифметическое", "Оценка стандартного отклонения", "Размах", "Коэффициент ковариации с последующей выборкой", "Количество элементов",
-//                "Нижняя граница доверительного интервала", "Верхняя граница доверительного интервала", "Оценка дисперсии", "Максимум", "Минимум"};
-//
-//        for (int i = 0; i<statNames.length; i++){
-//            Row row = mainSheet.createRow(i);
-//            for(int j = 0;j< mas.length; j++){
-//                Cell nameCell = row.createCell(j);
-//                nameCell.setCellValue((Repository.getInstance().getParameters())[i][j]);
-//            }
-//        }
-//        for(int i=0;i< mas.length;i++){
-//            Row headerRow = covarianceSheet.createRow(0);
-//            headerRow.createCell(i + 1).setCellValue("Выборка " + (i + 1));
-//
-//            for(int j=0; j< mas.length; j++){
-//                if(i==0){
-//                    Row sampleRow = covarianceSheet.createRow(j+1);
-//                    sampleRow.createCell(0).setCellValue("Выборка "+ (j+1));
-//                }
-//                covarianceSheet.getRow(j+1).createCell(i+1).setCellValue(Repository.getInstance().getCov(i,j));
-//
-//            }
-//        }
-//        try(FileOutputStream fileOut = new FileOutputStream("test.xlsx")){
-//            workbook.write(fileOut);
-//            System.out.println("Параметры успешно экспортированы");
-//        } catch (IOException e){
-//            System.out.println("Ошибка экспорта параметров: " + e.getMessage());
-//        } finally {
-//            workbook.close();
-//        }
-//}
 
