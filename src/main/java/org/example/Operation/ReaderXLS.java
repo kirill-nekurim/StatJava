@@ -93,7 +93,7 @@ public void writeXLSX(double[][] mas) throws IOException{
         covarianceSheet.autoSizeColumn(j - 1);
     }
 
-    try (FileOutputStream fileOut = new FileOutputStream("C:\\Users\\kiril\\IdeaProjects\\StatJava\\test.xlsx")) {
+    try (FileOutputStream fileOut = new FileOutputStream("test.xlsx")) {
         workbook.write(fileOut);
         System.out.println("Параметры успешно экспортированы");
     } catch (IOException e) {
