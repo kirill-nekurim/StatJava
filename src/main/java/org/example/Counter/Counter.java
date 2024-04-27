@@ -1,4 +1,4 @@
-package org.example.Operation;
+package org.example.Counter;
 
 import org.apache.commons.math3.stat.StatUtils;
 import org.apache.commons.math3.stat.correlation.Covariance;

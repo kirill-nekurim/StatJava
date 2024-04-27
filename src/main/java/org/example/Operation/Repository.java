@@ -1,5 +1,7 @@
 package org.example.Operation;
 
+import org.example.Counter.Counter;
+
 public class Repository {
     private static final int NUM_STATISTICS = 11;
     private static Repository INSTANCE;
@@ -53,9 +55,9 @@ public class Repository {
             case 3:
                 return Counter.getRange(matrix[j]);
             case 4:
-                return Counter.getSampleSize(matrix[j]);
-            case 5:
                 return Counter.getCoefficientOfVariation(matrix[j]);
+            case 5:
+                return Counter.getSampleSize(matrix[j]);
             case 6:
                 return Counter.getLowerConfidenceInterval(matrix[j]);
             case 7:

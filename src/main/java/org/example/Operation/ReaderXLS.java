@@ -57,7 +57,7 @@ public class ReaderXLS {
         return data;
     }
 
-public void writeXLSX(double[][] mas) throws IOException{
+public void writeXLSX(double[][] mas, String directoryPath) throws IOException{
     Workbook workbook = new XSSFWorkbook();
     Sheet mainSheet = workbook.createSheet("Полученные значения");
     Sheet covarianceSheet = workbook.createSheet("Матрица ковариации");
@@ -93,7 +93,7 @@ public void writeXLSX(double[][] mas) throws IOException{
         covarianceSheet.autoSizeColumn(j - 1);
     }
 
-    try (FileOutputStream fileOut = new FileOutputStream("test.xlsx")) {
+    try (FileOutputStream fileOut = new FileOutputStream(directoryPath +  "/test.xlsx")) {
         workbook.write(fileOut);
         System.out.println("Параметры успешно экспортированы");
     } catch (IOException e) {

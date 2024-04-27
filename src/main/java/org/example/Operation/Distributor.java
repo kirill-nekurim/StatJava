@@ -13,8 +13,8 @@ public class Distributor {
         Repository.getInstance().setMatrix(reader.readXLSX(file,which,a));
     }
 
-    public void Export() throws IOException{
-        reader.writeXLSX(Repository.getInstance().getMatrix());
+    public void Export(String directoryPath) throws IOException{
+        reader.writeXLSX(Repository.getInstance().getMatrix(), directoryPath);
     }
 
     public void Calculate(){

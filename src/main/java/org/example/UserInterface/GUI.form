@@ -46,65 +46,68 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="Exit" min="-2" pref="165" max="-2" attributes="0"/>
-                      <Component id="Export" min="-2" pref="165" max="-2" attributes="0"/>
-                      <Component id="CalculateParameters" min="-2" pref="165" max="-2" attributes="0"/>
-                      <Component id="Import" min="-2" pref="165" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="IndexForList" min="-2" pref="116" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                                  <Component id="ListChooser" min="-2" pref="111" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jScrollPane1" min="-2" pref="262" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
+                                  <Component id="Exit" min="-2" pref="165" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="TextForList" min="-2" pref="116" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
+                                  <Component id="IndexForList" min="-2" pref="116" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                                  <Component id="TextForList" min="-2" pref="116" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
+                          <EmptySpace pref="174" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" min="-2" pref="262" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="Export" alignment="0" max="32767" attributes="0"/>
+                              <Component id="CalculateParameters" alignment="0" max="32767" attributes="0"/>
+                              <Component id="Import" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="ListChooser" min="-2" pref="111" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="247" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="64" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="IndexForList" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="ListChooser" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="TextForList" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="Import" min="-2" pref="61" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="ListChooser" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="IndexForList" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="TextForList" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                  <Component id="Import" min="-2" pref="47" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="CalculateParameters" min="-2" pref="51" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="Export" min="-2" pref="48" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="27" pref="27" max="-2" attributes="0"/>
-                          <Component id="CalculateParameters" min="-2" pref="61" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                          <Component id="Export" min="-2" pref="61" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="Exit" min="-2" pref="61" max="-2" attributes="0"/>
+                          <EmptySpace pref="75" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" min="-2" pref="148" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" min="-2" pref="148" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="Exit" min="-2" pref="61" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="70" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -112,7 +115,7 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="Import">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Import"/>
+            <Property name="text" type="java.lang.String" value="&#x412;&#x44b;&#x431;&#x440;&#x430;&#x442;&#x44c; &#x444;&#x430;&#x439;&#x43b;"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ImportActionPerformed"/>
@@ -120,7 +123,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="CalculateParameters">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Count parameters"/>
+            <Property name="text" type="java.lang.String" value="&#x41f;&#x43e;&#x441;&#x447;&#x438;&#x442;&#x430;&#x442;&#x44c; &#x43f;&#x430;&#x440;&#x430;&#x43c;&#x435;&#x442;&#x440;&#x44b;"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CalculateParametersActionPerformed"/>
@@ -128,7 +131,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="Export">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Export"/>
+            <Property name="text" type="java.lang.String" value="&#x42d;&#x43a;&#x441;&#x43f;&#x43e;&#x440;&#x442;&#x438;&#x440;&#x43e;&#x432;&#x430;&#x442;&#x44c; &#x444;&#x430;&#x439;&#x43b;"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExportActionPerformed"/>
@@ -136,7 +139,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="Exit">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Exit"/>
+            <Property name="text" type="java.lang.String" value="&#x417;&#x430;&#x43a;&#x440;&#x44b;&#x442;&#x44c; &#x43f;&#x440;&#x43e;&#x433;&#x440;&#x430;&#x43c;&#x43c;&#x443;"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExitActionPerformed"/>
@@ -177,7 +180,7 @@
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
-                <Property name="text" type="java.lang.String" value="&#x418;&#x43d;&#x441;&#x442;&#x440;&#x443;&#x43a;&#x446;&#x438;&#x44f; &#x43f;&#x43e; &#x43f;&#x440;&#x438;&#x43c;&#x435;&#x43d;&#x435;&#x43d;&#x438;&#x44e;:&#xa;1)&#x421;&#x43d;&#x430;&#x447;&#x430;&#x43b;&#x430; &#x432;&#x43f;&#x438;&#x441;&#x44b;&#x432;&#x430;&#x435;&#x43c; &#x432; &#x43f;&#x43e;&#x43b;&#x435; &#xa;&#x43d;&#x443;&#x436;&#x43d;&#x44b;&#x439; &#x43d;&#x43e;&#x43c;&#x435;&#x440; &#x43b;&#x438;&#x441;&#x442;&#x430; &#x438;&#x43b;&#x438; &#x43d;&#x430;&#x437;&#x432;&#x430;&#x43d;&#x438;&#x435; &#x43b;&#x438;&#x441;&#x442;&#x430;&#xa;2)&#x418;&#x43c;&#x43f;&#x43e;&#x440;&#x442;&#x438;&#x440;&#x443;&#x435;&#x43c; &#x444;&#x430;&#x439;&#x43b; (Import)&#xa;3) &#x41f;&#x440;&#x43e;&#x438;&#x437;&#x432;&#x43e;&#x434;&#x438;&#x43c; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442; &#x43f;&#x430;&#x440;&#x430;&#x43c;&#x435;&#x442;&#x440;&#x43e;&#x432; (Count &#xa;parameters)&#xa;4) &#x42d;&#x43a;&#x441;&#x43f;&#x43e;&#x440;&#x442;&#x438;&#x440;&#x443;&#x435;&#x43c; &#x444;&#x430;&#x439;&#x43b;(Export)&#xa;5) &#x417;&#x430;&#x447;&#x438;&#x442;&#x44b;&#x432;&#x430;&#x435;&#x43c; &#x43b;&#x430;&#x431;&#x443; &#x441; &#x445;&#x43e;&#x440;&#x43e;&#x448;&#x435;&#x439; &#x43e;&#x446;&#x435;&#x43d;&#x43a;&#x43e;&#x439;"/>
+                <Property name="text" type="java.lang.String" value="&#x418;&#x43d;&#x441;&#x442;&#x440;&#x443;&#x43a;&#x446;&#x438;&#x44f; &#x43f;&#x43e; &#x43f;&#x440;&#x438;&#x43c;&#x435;&#x43d;&#x435;&#x43d;&#x438;&#x44e;:&#xa;1)&#x421;&#x43d;&#x430;&#x447;&#x430;&#x43b;&#x430; &#x432;&#x43f;&#x438;&#x441;&#x44b;&#x432;&#x430;&#x435;&#x43c; &#x432; &#x43f;&#x43e;&#x43b;&#x435; &#xa;&#x43d;&#x443;&#x436;&#x43d;&#x44b;&#x439; &#x43d;&#x43e;&#x43c;&#x435;&#x440; &#x43b;&#x438;&#x441;&#x442;&#x430; &#x438;&#x43b;&#x438; &#x43d;&#x430;&#x437;&#x432;&#x430;&#x43d;&#x438;&#x435; &#x43b;&#x438;&#x441;&#x442;&#x430;&#xa;2)&#x418;&#x43c;&#x43f;&#x43e;&#x440;&#x442;&#x438;&#x440;&#x443;&#x435;&#x43c; &#x444;&#x430;&#x439;&#x43b; (Import)&#xa;3) &#x41f;&#x440;&#x43e;&#x438;&#x437;&#x432;&#x43e;&#x434;&#x438;&#x43c; &#x440;&#x430;&#x441;&#x447;&#x435;&#x442; &#x43f;&#x430;&#x440;&#x430;&#x43c;&#x435;&#x442;&#x440;&#x43e;&#x432; (Count &#xa;parameters)&#xa;4) &#x42d;&#x43a;&#x441;&#x43f;&#x43e;&#x440;&#x442;&#x438;&#x440;&#x443;&#x435;&#x43c; &#x444;&#x430;&#x439;&#x43b;(Export)&#xa;5) &#x417;&#x430;&#x441;&#x447;&#x438;&#x442;&#x44b;&#x432;&#x430;&#x435;&#x43c; &#x43b;&#x430;&#x431;&#x443; &#x441; &#x445;&#x43e;&#x440;&#x43e;&#x448;&#x435;&#x439; &#x43e;&#x446;&#x435;&#x43d;&#x43a;&#x43e;&#x439;"/>
               </Properties>
             </Component>
           </SubComponents>
