@@ -4,6 +4,7 @@
     import javax.swing.UIManager;
     import javax.swing.UnsupportedLookAndFeelException;
     import org.example.UserInterface.GUI;
+
     public class Main {
         public static void main(String[] args){
             try {
@@ -13,5 +14,6 @@
             }
 
             (new GUI()).setVisible(true);
+
         }
         }
