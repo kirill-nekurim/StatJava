@@ -6,6 +6,8 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
+import javax.swing.*;
+
 public class ReaderXLS {
 
     public double[][] readXLSX(File file, String which, boolean a) throws IOException, InvalidFormatException {
@@ -13,7 +15,10 @@ public class ReaderXLS {
         try {
             workbook = WorkbookFactory.create(file);
         } catch (IOException e) {
-            System.out.println("Ошибка при чтении Excel файла: " + e.getMessage());
+            // Обработка ошибки открытия файла
+            javax.swing.JOptionPane.showMessageDialog(null,
+                    "Ошибка при чтении Excel файла: " + e.getMessage(),
+                    "Ошибка", JOptionPane.ERROR_MESSAGE);
             return null;
         }
         Sheet sheet;
@@ -22,7 +27,10 @@ public class ReaderXLS {
                 int index = Integer.parseInt(which) - 1;
                 sheet = workbook.getSheetAt(index);
             } catch (IllegalArgumentException e) {
-                System.out.println("Неверный формат индекса листа. Используется первый лист.");
+                // Обработка ошибки форматирования индекса листа
+                javax.swing.JOptionPane.showMessageDialog(null,
+                        "Неверный формат индекса листа. Используется первый лист.",
+                        "Ошибка", JOptionPane.ERROR_MESSAGE);
                 sheet = workbook.getSheetAt(0);
             }
         } else {
@@ -30,7 +38,10 @@ public class ReaderXLS {
         }
 
         if (sheet == null) {
-            System.out.println("Лист не найден, используется первый лист.");
+            // Обработка ошибки - лист не найден
+            javax.swing.JOptionPane.showMessageDialog(null,
+                    "Лист не найден, используется первый лист.",
+                    "Ошибка", JOptionPane.ERROR_MESSAGE);
             sheet = workbook.getSheetAt(0);
         }
 
