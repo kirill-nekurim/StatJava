@@ -64,8 +64,6 @@
                     }
                 }
             }
-            System.out.println(data[0][0]);
-            System.out.println(data[0][99]);
             workbook.close();
             return data;
         }
