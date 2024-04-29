@@ -11,6 +11,7 @@
             } catch (UnsupportedLookAndFeelException e) {
                 throw new RuntimeException(e);
             }
+
             (new GUI()).setVisible(true);
         }
         }
