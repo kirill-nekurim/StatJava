@@ -4,17 +4,8 @@ import org.example.Counter.Counter;
 
 public class Repository {
     private static final int NUM_STATISTICS = 11;
-//    private static Repository INSTANCE;
     private static double[][] matrix;
     private static double[][] parameters;
-
-//    public static Repository getInstance(){
-//        if(INSTANCE == null){
-//            INSTANCE = new Repository();
-//        }
-//        return INSTANCE;
-//    }
-
     public static double[][] getMatrix() {
         return matrix;
     }
