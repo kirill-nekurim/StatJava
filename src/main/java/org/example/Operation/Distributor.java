@@ -10,14 +10,15 @@ public class Distributor {
     ReaderXLS reader = new ReaderXLS();
 
     public void Import(File file, String which, boolean a) throws IOException, FileNotFoundException, InvalidFormatException{
-        Repository.getInstance().setMatrix(reader.readXLSX(file,which,a));
+        Repository rep = new Repository();
+        rep.setMatrix(reader.readXLSX(file,which,a));
     }
 
     public void Export(String directoryPath) throws IOException{
-        reader.writeXLSX(Repository.getInstance().getMatrix(), directoryPath);
+        reader.writeXLSX(Repository.getMatrix(), directoryPath);
     }
 
     public void Calculate(){
-        Repository.getInstance().setParameters();
+        Repository.setParameters();
     }
 }

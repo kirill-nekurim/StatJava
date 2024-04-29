@@ -4,18 +4,18 @@ import org.example.Counter.Counter;
 
 public class Repository {
     private static final int NUM_STATISTICS = 11;
-    private static Repository INSTANCE;
-    private double[][] matrix;
-    private double[][] parameters;
+//    private static Repository INSTANCE;
+    private static double[][] matrix;
+    private static double[][] parameters;
 
-    public static Repository getInstance(){
-        if(INSTANCE == null){
-            INSTANCE = new Repository();
-        }
-        return INSTANCE;
-    }
+//    public static Repository getInstance(){
+//        if(INSTANCE == null){
+//            INSTANCE = new Repository();
+//        }
+//        return INSTANCE;
+//    }
 
-    public double[][] getMatrix() {
+    public static double[][] getMatrix() {
         return matrix;
     }
 
@@ -23,15 +23,15 @@ public class Repository {
         this.matrix = matrix;
     }
 
-    public double[][] getParameters(){
+    public static double[][] getParameters(){
         return parameters;
     }
 
-    public double getCov(int i, int j){
+    public static double getCov(int i, int j){
         return Counter.getCovariance(matrix[i],matrix[j]);
     }
 
-    public void setParameters(){
+    public static void setParameters(){
         if(matrix==null){
             System.out.println("Данные не импортированы");
             return;
@@ -39,12 +39,12 @@ public class Repository {
         parameters = new double[NUM_STATISTICS][matrix.length];
         for(int i=0;i<NUM_STATISTICS;i++){
             for(int j=0;j< matrix.length;j++){
-                parameters[i][j]=decider(i, j, matrix);
+                parameters[i][j]=decider(i, j, matrix); // Передаем matrix в decider
             }
         }
     }
 
-    public double decider(int i,int j,double[][] matrix){
+    public static double decider(int i,int j,double[][] matrix){
         switch (i){
             case 0:
                 return Counter.getGeometricMean(matrix[j]);
