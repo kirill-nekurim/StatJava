@@ -69,6 +69,7 @@
         }
 
     public void writeXLSX(double[][] mas, String directoryPath) throws IOException{
+            Repository rep = new Repository();
         Workbook workbook = new XSSFWorkbook();
         Sheet mainSheet = workbook.createSheet("Полученные значения");
         Sheet covarianceSheet = workbook.createSheet("Матрица ковариации");
@@ -85,21 +86,21 @@
                 nameCell.setCellValue(statNames[i] + " для " + (j + 1) + "-й выборки: ");
 
                 Cell valueCell = row.createCell(j * 2 + 1);
-                valueCell.setCellValue((Repository.getParameters())[i][j]);
+                valueCell.setCellValue((rep.getParameters())[i][j]);
             }
         }
         Row row = covarianceSheet.createRow(0);
-        for (int j = 0; j < Repository.getMatrix().length; j++) {
+        for (int j = 0; j < rep.getMatrix().length; j++) {
             Cell name = row.createCell(j + 1);
             name.setCellValue("Выборка " + (j + 1));
         }
-        for (int j = 1; j <= Repository.getMatrix().length; j++) {
+        for (int j = 1; j <= rep.getMatrix().length; j++) {
             row = covarianceSheet.createRow(j);
             Cell name = row.createCell(0);
             name.setCellValue("Выборка " + j);
-            for (int i = 1; i <= Repository.getMatrix().length; i++) {
+            for (int i = 1; i <= rep.getMatrix().length; i++) {
                 name = row.createCell(i);
-                name.setCellValue(Repository.getCov(i - 1, j - 1));
+                name.setCellValue(rep.getCov(i - 1, j - 1));
             }
             covarianceSheet.autoSizeColumn(j - 1);
         }

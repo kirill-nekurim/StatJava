@@ -3,10 +3,10 @@ package org.example.Operation;
 import org.example.Counter.Counter;
 
 public class Repository {
-    private static final int NUM_STATISTICS = 11;
-    private static double[][] matrix;
-    private static double[][] parameters;
-    public static double[][] getMatrix() {
+    private final int NUM_STATISTICS = 11;
+    private  double[][] matrix;
+    private  double[][] parameters;
+    public  double[][] getMatrix() {
         return matrix;
     }
 
@@ -14,15 +14,15 @@ public class Repository {
         this.matrix = matrix;
     }
 
-    public static double[][] getParameters(){
+    public  double[][] getParameters(){
         return parameters;
     }
 
-    public static double getCov(int i, int j){
+    public  double getCov(int i, int j){
         return Counter.getCovariance(matrix[i],matrix[j]);
     }
 
-    public static void setParameters(){
+    public  void setParameters(){
         if(matrix==null){
             System.out.println("Данные не импортированы");
             return;
@@ -33,9 +33,10 @@ public class Repository {
                 parameters[i][j]=decider(i, j, matrix); // Передаем matrix в decider
             }
         }
+
     }
 
-    public static double decider(int i,int j,double[][] matrix){
+    public  double decider(int i,int j,double[][] matrix){
         switch (i){
             case 0:
                 return Counter.getGeometricMean(matrix[j]);

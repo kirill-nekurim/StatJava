@@ -8,17 +8,16 @@ import java.io.File;
 
 public class Distributor {
     ReaderXLS reader = new ReaderXLS();
-
+    Repository rep = new Repository();
     public void Import(File file, String which, boolean a) throws IOException, FileNotFoundException, InvalidFormatException{
-        Repository rep = new Repository();
         rep.setMatrix(reader.readXLSX(file,which,a));
     }
 
     public void Export(String directoryPath) throws IOException{
-        reader.writeXLSX(Repository.getMatrix(), directoryPath);
+        reader.writeXLSX(rep.getMatrix(), directoryPath);
     }
 
     public void Calculate(){
-        Repository.setParameters();
+        rep.setParameters();
     }
 }
